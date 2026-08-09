@@ -1,0 +1,7 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:xterm="clr-namespace:AgentSpace.Avalonia.XTerm;assembly=AgentSpace.Avalonia.XTerm"
+             x:Class="TerminalControl.Controls.TerminalControl">
+    <xterm:XTermControl x:Name="XTerm"
+                        FontSize="14"/>
+</UserControl>

@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:TerminalControl.ViewModels"
+        xmlns:local="clr-namespace:TerminalControl.Controls"
+        x:Class="TerminalControl.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Terminal Control Demo"
+        Width="900"
+        Height="600">
+    
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <DockPanel>
+        <!-- Connection Panel -->
+        <Border DockPanel.Dock="Top" 
+                Background="#2D2D30" 
+                Padding="10" 
+                BorderBrush="#3E3E42" 
+                BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <TextBox x:Name="HostBox" 
+                         Text="localhost" 
+                         Width="150" 
+                         PlaceholderText="Host"/>
+                <TextBox x:Name="PortBox" 
+                         Text="22" 
+                         Width="60" 
+                         PlaceholderText="Port"/>
+                <TextBox x:Name="UsernameBox" 
+                         Text="root" 
+                         Width="120" 
+                         PlaceholderText="Username"/>
+                <TextBox x:Name="PasswordBox" 
+                         Text="" 
+                         Width="150" 
+                         PlaceholderText="Password" 
+                         PasswordChar="●"/>
+                <Button x:Name="ConnectBtn" 
+                        Content="Connect"
+                        Command="{Binding ConnectCommand}"/>
+                <Button x:Name="DisconnectBtn" 
+                        Content="Disconnect"
+                        Command="{Binding DisconnectCommand}"/>
+                <TextBlock x:Name="StatusText" 
+                           Text="{Binding Status}" 
+                           Foreground="#4EC9B0" 
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Terminal Control (can be embedded multiple times) -->
+        <local:TerminalControl x:Name="Terminal"/>
+    </DockPanel>
+</Window>
