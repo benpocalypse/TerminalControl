@@ -15,9 +15,7 @@
     <DockPanel>
         <!-- Connection Panel -->
         <Border DockPanel.Dock="Top" 
-                Background="#2D2D30" 
                 Padding="10" 
-                BorderBrush="#3E3E42" 
                 BorderThickness="0,0,0,1">
             <StackPanel Orientation="Horizontal" Spacing="8">
                 <TextBox x:Name="HostBox" 
@@ -45,7 +43,6 @@
                         Command="{Binding DisconnectCommand}"/>
                 <TextBlock x:Name="StatusText" 
                            Text="{Binding Status}" 
-                           Foreground="#4EC9B0" 
                            VerticalAlignment="Center"/>
             </StackPanel>
         </Border>

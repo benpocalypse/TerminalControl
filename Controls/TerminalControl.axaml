@@ -2,6 +2,5 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:xterm="clr-namespace:AgentSpace.Avalonia.XTerm;assembly=AgentSpace.Avalonia.XTerm"
              x:Class="TerminalControl.Controls.TerminalControl">
-    <xterm:XTermControl x:Name="XTerm"
-                        FontSize="14"/>
+    <xterm:XTermControl x:Name="XTerm" FontFamily="Noto Sans Mono Light" FontSize="13.33"/>
 </UserControl>

@@ -5,6 +5,7 @@ using Renci.SshNet;
 using System;
 using System.Text;
 using System.Threading.Tasks;
+using AgentSpace.Avalonia.XTerm;
 
 namespace TerminalControl.Controls;
 
@@ -26,6 +27,8 @@ public partial class TerminalControl : UserControl
     {
         InitializeComponent();
         XTerm.KeyDown += OnKeyDown;
+
+        XTerm.ColorScheme = ColorScheme.Dracula;
     }
 
     public async Task<bool> ConnectSSH(string host, int port, string username, string password)
